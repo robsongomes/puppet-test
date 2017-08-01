@@ -1,4 +1,4 @@
-class test {
+class puppet_test {
 
   if $environment == 'production' {
     notify {'This is the production environment'}
