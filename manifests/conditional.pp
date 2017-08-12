@@ -1,4 +1,11 @@
+# puppet_test::conditional
 class puppet_test::conditional {
+
+  if $environment == 'production' {
+    notify {'This is the production environment':}
+  } else {
+    notify {'This is not production':}
+  }
 
   if $environment == 'production' {
     notify { 'Production é quando tá tudo pronto.' : }
@@ -8,7 +15,7 @@ class puppet_test::conditional {
     notify { 'Test é ideal para experimentar coisas.' : }
   }
 
-  unless $facts['memory']['system']['total_bytes'] > 1042087936 {
+  unless $facts['memory']['system']['total_bytes'] > 2147483648 {
     notify { 'Essa máquina pode rodar um puppetserver' : }
   }
 
@@ -23,6 +30,6 @@ class puppet_test::conditional {
     'Debian' => 'root',
   }
 
-  notify { 'O grupo administrador dessa máquina é ${rootgroup}' : }
+  notify { "O grupo administrador dessa máquina é ${rootgroup}" : }
 
 }
