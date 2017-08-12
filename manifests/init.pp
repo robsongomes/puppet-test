@@ -6,5 +6,5 @@ class puppet_test {
     notify {'This is not production':}
   }
 
-  contains puppet_test::conditional
+  contain puppet_test::conditional
 }
