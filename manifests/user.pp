@@ -21,7 +21,7 @@ class puppet_test::user {
     ensure  => file,
     owner   => 'robson',
     group   => 'robson',
-    mode    => '0644',
+    mode    => '0600',
     require => User['robson'],
   }
 
