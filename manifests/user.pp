@@ -55,7 +55,7 @@ class puppet_test::user {
 
   file { 'private_key':
     path    => '/home/robson/.ssh/id_rsa',
-    content => $private_key_content
+    content => $private_key_content,
     ensure  => file,
     owner   => 'robson',
     group   => 'robson',
@@ -65,7 +65,7 @@ class puppet_test::user {
 
   file { 'public_key':
     path    => '/home/robson/.ssh/id_rsa.pub',
-    content => $public_key_content
+    content => $public_key_content,
     ensure  => file,
     owner   => 'robson',
     group   => 'robson',
