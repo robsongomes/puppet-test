@@ -5,5 +5,6 @@ class puppet_test {
 
   if $facts['os']['family'] == 'RedHat' {
     contain puppet_test::user
+    contain puppet_test::host
   }
 }
