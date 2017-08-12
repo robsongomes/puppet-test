@@ -8,7 +8,7 @@ class puppet_test::conditional {
     notify { 'Test é ideal para experimentar coisas.' : }
   }
 
-  unless $facts['memory']['system']['totalbytes'] > 1042087936 {
+  unless $facts['memory']['system']['total_bytes'] > 1042087936 {
     notify { 'Essa máquina pode rodar um puppetserver' : }
   }
 
