@@ -5,6 +5,6 @@ class puppet_test::ssh {
   ssh_authorized_key { 'robson':
     user => 'ubuntu',
     type => 'ssh-rsa',
-    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDC5lqdoWWytK4g3xZRzs/jMmlHM30RoscBur4RgvtMqRnB6idO9BujSwW1k59D6pmW3M82//YlJgdVE1R5tqOtH3O91CzMwXKKAGbKU/FyoiXvpTihY3Fbi8qZHjEn3GB/O3nPwagfA7h1ZbY1MdZ36LA0j56SuCauEceIscsG44rQlydV8LXIJhSN6b9W+2dLpmFsFDdR6J7bNsG+hvN77t7gJde8yBv55bysS6wuPkF/ruv9bQyulcTdSntmqmlL+xt+z2nBaHXd5Lh0ksTAut7ukj/7/BaPV9msQigNgP7m9bLB7hZn3a6gX2ae4l5Z4NSG3vbkjB0OApn449z',
+    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQChL8qFC4Sk/qfjn8uiLtqWLIUTN68aFblJ0rjqKixzvV2TWoWH8J4nANYjGpKc1UvAqbx5rU5U0/Gz/+7Rbq2QWLBRH9MxckSKtqGbaalSjku6eCN28g2+MGwoWbMxb2LExpKGsfcY9E1gFLMstKDHrvRFpU8/an2ICM/N+BfrC11vnm5ueFtAPQwhIEaroG9ThBdiu1E837Y+HoXbMdqkUqSl+/BYaF/iQU3V+KgpQGY/2elhHPZlOEzcXfh7CAQq9g7G6rMM465eZp/qwLSIyCiuxcPyiIuf726lhIXkf6tEr1wllpUuhu079H7P//9HJEYUN13BsBKGmYs7uhEX',
   }
 }
