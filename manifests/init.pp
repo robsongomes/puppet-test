@@ -5,4 +5,6 @@ class puppet_test {
   } else {
     notify {'This is not production':}
   }
+
+  contains puppet_test::conditional
 }
