@@ -2,13 +2,23 @@
 #
 class puppet_test::user {
 
-  user { 'robson':
+  $user = 'robson'
+  $group = 'robson'
+  $home = "/home/${user}"
+
+  File {
+    ensure  => file,
+    owner   => $user,
+    group   => $group,
+  }
+
+  user { $user:
     ensure     => present,
     comment    => 'Usuário criado pelo puppet',
-    home       => '/home/robson',
+    home       => $home,
     managehome => true,
     password   => pw_hash('Password1', 'SHA-512', 'random'),
-    groups     => ['robson'],
+    groups     => $group,
   }
 
   group { 'robson':
@@ -16,21 +26,15 @@ class puppet_test::user {
   }
 
   file { 'private_key':
-    path    => '/home/robson/.ssh/id_rsa',
+    path    => "${home}/.ssh/id_rsa",
     source  => "puppet:///modules/puppet_test/id_rsa",
-    ensure  => file,
-    owner   => 'robson',
-    group   => 'robson',
     mode    => '0600',
-    require => User['robson'],
+    require => User[$user],
   }
 
   file { 'public_key':
-    path    => '/home/robson/.ssh/id_rsa.pub',
+    path    => "${home}/.ssh/id_rsa.pub",
     source  => "puppet:///modules/puppet_test/id_rsa.pub",
-    ensure  => file,
-    owner   => 'robson',
-    group   => 'robson',
     mode    => '0644',
     require => User['robson'],
   }
