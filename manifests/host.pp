@@ -14,7 +14,7 @@ class puppet_test::host {
     ip  => '10.20.1.3',
   }
 
-  host::host_entry { 'puppetmaster':
+  puppet_test::host_entry { 'puppetmaster':
     ip  => '10.20.1.2',
   }
 
