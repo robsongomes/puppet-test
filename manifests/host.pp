@@ -2,8 +2,23 @@
 #
 class puppet_test::host {
 
-  host { 'puppetagent':
-    ip           => '10.20.1.3',
-    host_aliases => ['puppetagent', 'agent', 'puppetagent.example.com'],
+  host { 'localhost':
+    ip  => '127.0.0.1',
+  }
+
+  host { $facts['networking']['fqdn']:
+    ip  => $facts['networking']['interfaces']['eth1']['ip'],
+  }
+
+  host::host_entry { 'puppetagent':
+    ip  => '10.20.1.3',
+  }
+
+  host::host_entry { 'puppetmaster':
+    ip  => '10.20.1.2',
+  }
+
+  resources { 'host':
+    purge => true,
   }
 }
