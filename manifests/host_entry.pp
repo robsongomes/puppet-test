@@ -1,4 +1,4 @@
-define class host::host_entry (
+define host::host_entry (
   $ip,
   ) {
 
