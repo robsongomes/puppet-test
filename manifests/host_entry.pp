@@ -1,4 +1,4 @@
-define class host::host_entry (
+define puppet_test::host_entry (
   $ip,
   ) {
 

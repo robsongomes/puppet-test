@@ -10,7 +10,7 @@ class puppet_test::host {
     ip  => $facts['networking']['interfaces']['eth1']['ip'],
   }
 
-  host::host_entry { 'puppetagent':
+  puppet_test::host_entry { 'puppetagent':
     ip  => '10.20.1.3',
   }
 
